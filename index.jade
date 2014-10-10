@@ -1,0 +1,154 @@
+extends assets/layout/layout
+
+block content
+    //-Masthead
+    #headerwrap.btmborder
+        .container
+            .row.centered
+                .col-lg-8.col-lg-offset-2.mt
+                    img.centered.logo(src="assets/img/logo.png")
+                .col-lg-8.col-lg-offset-2.carousel-content.carousel.slide#carousel(data-ride="carousel")
+                    //-ol.carousel-indicators
+                        li.active(data-target="#myCarousel" data-slide-to="0")
+                        li(data-target="#myCarousel" data-slide-to="1")
+                    .carousel-inner
+                        .item.active
+                            h1.hidethis.animation.slideDown We are your digital branding Whizz
+                            //-p.mt
+                                a(href="#grey")
+                                button.btn.btn-cta.btn-lg(type="button") KNOW US MORE
+                        .item
+                            h1.hidethis.animation.slideDown 
+                                span.visible-xs-block
+                                    span Call
+                                span.hidden-xs
+                                    span Skype
+                                span  Us at 
+                                span.visible-xs-block
+                                    a.phone(href="tel:+62217811285") +62 21 781 1285
+                                span.hidden-xs
+                                    a.skype(href="skype:rokutsan?chat")
+                                        i.fa.fa-skype
+                                        span Rokutsan
+                            h3.animation.slideDown for futher inquiries
+                    //-a.carousel-control.left(href="#carousel" data-ride="carousel" data-slide="prev")
+                        span.glyphicon.glyphicon-chevron-left
+                    //-a.carousel-control.right(href="#carousel" data-ride="carousel" data-slide="next")
+                        span.glyphicon.glyphicon-chevron-right
+        
+    //-Brands & Clients
+    #grey.btmborder
+        .container
+            .row.mt.centered
+                .col-lg-4.col-lg-offset-4
+                    h3 Featured Brands & Clients
+                    hr
+
+            .row.centered
+                .row.centered
+                    .col-lg-3.pt
+                        img.img-responsive(src="assets/img/clients/client01.png" alt="")
+                    .col-lg-3.pt
+                        img.img-responsive(src="assets/img/clients/client02.png" alt="")
+                    .col-lg-3.pt
+                        img.img-responsive(src="assets/img/clients/client03.png" alt="")
+                    .col-lg-3.pt
+                        img.img-responsive(src="assets/img/clients/client04.png" alt="")
+
+    //-Call to Action 2
+    #cta02.btmborder.topborder
+        .container
+            .row
+                .col-lg-8.col-lg-offset-2
+                    h2 Our products & services are crafted with the utmost care to fulfill your needs.
+                    //- button.btn.btn-cta.btn-lg LEARN MORE
+
+    //-Featured Icons
+    .container
+        .row.mt
+            .col-lg-4.centered.spi
+                i.fa.fa-comments-o.fa-5x
+                h4 External Branding Services
+                p We're talking about 
+                    span.bu Buzzer Management
+                    | , 
+                    span.bu Social Network Management
+                    | , 
+                    span.bu Digital Campaigns
+                    | , 
+                    span.bu Websites
+                    | , and even 
+                    span.bu Microsites
+                    | . We're pretty sure you got 
+                    strong the pictures
+                    | .
+            .col-lg-4.centered.spi
+                i.fa.fa-cogs.fa-5x
+                h4 Internal Business Support System
+                p You have  
+                    strong awesome team
+                    | , 
+                    strong amazing plans
+                    | , and 
+                    strong superb funding
+                    | . We're here to make your company 
+                    strong even better
+                    |  by providing our 
+                    span.bu ERP Development
+                    |  and 
+                    span.bu Other Internal System Service
+                    | .
+            .col-lg-4.centered.spi
+                i.fa.fa-cloud.fa-5x
+                h4 Private Cloud Storage and Data Hosting
+                p We help your 
+                    span.bu storage
+                    |  problem so you don't have to worry about accessing your important data where and when you need them. We also 
+                    span.bu manage
+                    |  and provide 
+                    span.bu VPS
+                    |  for your web apps.
+
+
+    //-Black Section
+    #black
+        .container
+            .row.mt.centered
+                .col-lg-4.col-lg-offset-4
+                    h3 Our Work Process
+                    hr
+            .row.mt
+                .col-lg-3
+                    p.capitalize 1
+                    h4 Initial Meeting
+                    p After you contact us, our 
+                        span.bi Hivequeen
+                        |  staff would contact you via mail to arrange a set up meeting. We would like 
+                        span.bu chill with you
+                        |  and discuss about your 
+                        span.bu needs
+                        |  and 
+                        span.bu what can we do for you
+                        | . 
+                .col-lg-3
+                    p.capitalize 2
+                    h4 Assessment
+                    p We would need to analyze your existing product, service, brand and business process to extract insights with the proper approach. We need your help in making sure the information we gathered are valid.
+                .col-lg-3
+                    p.capitalize 3
+                    h4 Work, Work.
+                    p Now it's time for us to collaborate days and nights. At this stage you have the choice to use the right to enjoy our smooth milestones or disturb it. But remember, one does not simply walks into Mordor.
+                .col-lg-3
+                    p.capitalize 4
+                    h4 We got 'em, we got 'em!
+                    p Ok, now everybody's satisfied and we hope that our solutions implemented nicely.
+
+
+    //- Contact Section
+    #white
+        .container
+            .row.mt
+                .col-lg-4.col-lg-offset-4.centered
+                    h3 Contact Us
+                    hr
+        #map

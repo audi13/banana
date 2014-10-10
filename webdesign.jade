@@ -1,0 +1,20 @@
+extends assets/layout/layout
+
+block content
+
+    //-Masthead
+    main#top.masthead.heightbackup(role="main")
+        
+        //-Subscribe Form
+        include layout/body/subscribe
+
+    #content-explore
+        #explore.container
+            //-Clients
+            include layout/body/clients
+
+            //-Tech
+            include layout/body/tech
+
+    //-FAQ
+    //-include layout/body/faq

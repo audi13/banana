@@ -1,0 +1,31 @@
+//- Fixed Navbar
+div.navbar.navbar-default.navbar-fixed-top.btmborder(role="navigation")
+    div.container
+        div.navbar-header
+            button.navbar-toggle(type="button" data-toggle="collapse" data-target=".navbar-collapse")
+                span.sr-only Toggle navigation
+                span.icon-bar
+                span.icon-bar
+                span.icon-bar
+            a.navbar-brand(href="index.html") 
+                strong Your Digital Branding Whizz
+        div.navbar-collapse.collapse.navbar-right
+            ul.nav.navbar-nav
+                li.active
+                    a(href="#about") ABOUT
+                li.dropdown
+                    a(href="#" class="dropdown-toggle" data-toggle="dropdown") OUR SERVICES 
+                        b.caret
+                    ul.dropdown-menu
+                        li
+                            a(href="webdesign.html") WEBSITE PACKAGES
+                        //li
+                            a(href="single-post.html") ENTERPRISE RESOURCE PLANNER
+                        //li
+                            a(href="portfolio.html") SOCIAL MEDIA MANAGEMENT
+                        //li
+                            a(href="single-project.html") ENGAGEMENT STRATEGIES
+                li
+                    a(href="webdesign.html#explore") PORTFOLIOS
+                li
+                    a(href="#contactus") CONTACT US
