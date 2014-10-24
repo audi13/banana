@@ -1,0 +1,25 @@
+{
+  "name": "supernova",
+  "version": "0.0.2",
+  "description": "A Front End Framework from Rokutsan using Jade, Stylus, and Uhmm Special Sauce",
+  "main": "gulp.js",
+  "dependencies": {
+    "bower": "^1.3.12",
+    "gulp": "^3.8.9",
+    "gulp-changed": "^1.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rokutsan/supernova.git"
+  },
+  "author": "Muhammad Tsani Qudsi",
+  "license": "GPL",
+  "bugs": {
+    "url": "https://github.com/rokutsan/supernova/issues"
+  },
+  "homepage": "https://github.com/rokutsan/supernova"
+}
