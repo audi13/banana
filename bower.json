@@ -3,7 +3,8 @@
   "version": "0.0.2",
   "homepage": "https://github.com/rokutsan/supernova",
   "authors": [
-    "Muhammad Tsani Qudsi <tsany@rokutsan.com>", "Bondan Rastika <bondan@rokutsan.com>"
+    "Muhammad Tsani Qudsi <tsany@rokutsan.com>",
+    "Bondan Rastika <bondan@rokutsan.com>"
   ],
   "description": "A Front End Framework from Rokutsan using Jade, Stylus, and Uhmm Special Sauce",
   "moduleType": [
@@ -24,6 +25,10 @@
   ],
   "devDependencies": {
     "bootstrap-stylus": "latest",
-    "html5shiv": "latest"
+    "html5shiv": "latest",
+    "components-font-awesome": "~4.2.0"
+  },
+  "dependencies": {
+
   }
 }
