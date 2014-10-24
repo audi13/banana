@@ -1,0 +1,38 @@
+extends assets/layout/layout
+
+block content
+    //-Masthead
+    #headerwrap.btmborder
+        .container
+            .row.centered
+                .col-lg-8.col-lg-offset-2.mt
+                    img.centered.logo(src="assets/img/logo.png")
+                .col-lg-8.col-lg-offset-2.carousel-content.carousel.slide#carousel(data-ride="carousel")
+                    //-ol.carousel-indicators
+                        li.active(data-target="#myCarousel" data-slide-to="0")
+                        li(data-target="#myCarousel" data-slide-to="1")
+                    .carousel-inner
+                        .item.active
+                            h1.hidethis.animation.slideDown We are your digital branding Whizz
+                            //-p.mt
+                                a(href="#grey")
+                                button.btn.btn-cta.btn-lg(type="button") KNOW US MORE
+                        .item
+                            h1.hidethis.animation.slideDown 
+                                span.visible-xs-block
+                                    span Call
+                                span.hidden-xs
+                                    span Skype
+                                span  Us at 
+                                span.visible-xs-block
+                                    a.phone(href="tel:+62217811285") +62 21 781 1285
+                                span.hidden-xs
+                                    a.skype(href="skype:rokutsan?chat")
+                                        i.fa.fa-skype
+                                        span Rokutsan
+                            h3.animation.slideDown for futher inquiries
+                    //-a.carousel-control.left(href="#carousel" data-ride="carousel" data-slide="prev")
+                        span.glyphicon.glyphicon-chevron-left
+                    //-a.carousel-control.right(href="#carousel" data-ride="carousel" data-slide="next")
+                        span.glyphicon.glyphicon-chevron-right
+    
