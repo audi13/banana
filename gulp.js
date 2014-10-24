@@ -6,7 +6,7 @@ gulp.task('templates', function() {
 
   gulp.src('./lib/*.jade')
     .pipe(jade({
-      locals: JSON.parse(fs.readFileSync(o.views.data, 'utf8'))
+      locals: YOUR_LOCALS
     }))
     .pipe(gulp.dest('./dist/'))
 });
