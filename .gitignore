@@ -9,6 +9,7 @@ bin/
 tmp/
 node_modules/
 bower_components/
+dist/
 *.tmp
 *.bak
 *.swp
