@@ -1,7 +1,7 @@
 var gulp = require('gulp');
 var jade = require('gulp-jade');
 
-gulp.task('templates', function() {
+gulp.task('default', function() {
   var YOUR_LOCALS = {};
 
   gulp.src('./lib/*.jade')
