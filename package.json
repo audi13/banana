@@ -9,7 +9,9 @@
     "gulp-changed": "^1.0.0",
     "gulp-jade": "^0.9.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "stylus": "^0.49.2"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
