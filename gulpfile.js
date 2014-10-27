@@ -1,7 +1,8 @@
-var gulp = require('gulp');
-var jade = require('gulp-jade');
-var stylus = require('stylus');
-var gul
+var gulp = require('gulp'),
+    jade = require('gulp-jade'),
+    stylus = require('gulp-stylus'),
+    rename = require("gulp-rename"),
+    minify = require('gulp-minify-css');
 
 gulp.task('default', ['jade', 'bootstrap']);
 
@@ -9,14 +10,16 @@ gulp.task('default', ['jade', 'bootstrap']);
 gulp.task('bootstrap', function () {
     gulp.src('bower_components/bootstrap-stylus/stylus/bootstrap.styl')
         .pipe(stylus())
-        .pipe(gulp.dest('dist/assets/css/'));
+        .pipe(minify())
+        .pipe(rename("bootstrap.min.css"))
+        .pipe(gulp.dest('dist/assets/css'));
 });
 
 //- compile all the jade function
 gulp.task('jade', function () {
     var YOUR_LOCALS = {};
 
-  gulp.src('./lib/*.jade')
+  gulp.src('lib/*.jade')
     .pipe(jade({
       locals: YOUR_LOCALS
     }))
