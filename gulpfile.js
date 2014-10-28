@@ -6,7 +6,13 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     concat = require('gulp-concat');
 
-gulp.task('default', ['jade', 'bootstrapcss', 'bootstrapjs']);
+gulp.task('default', ['jade', 'bootstrap', 'move']);
+gulp.task('bootstrap', ['bootstrapcss', 'bootstrapjs']);
+
+gulp.task('move', function () {
+    gulp.src('bower_components/bootstrap-stylus/fonts/*')
+        .pipe(gulp.dest('dist/assets/fonts'))
+});
 
 //- Get one .styl file and render
 gulp.task('bootstrapcss', function () {
@@ -19,8 +25,8 @@ gulp.task('bootstrapcss', function () {
 
 gulp.task('bootstrapjs', function () {
     gulp.src('bower_components/bootstrap-stylus/js/*.js')
+        .pipe(concat('bootstrap.min.js'))
         .pipe(uglify())
-        .pipe(concat('bootstrap.js'))
         .pipe(gulp.dest('dist/assets/js'));
 });
 
