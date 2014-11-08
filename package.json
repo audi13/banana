@@ -1,6 +1,6 @@
 {
   "name": "supernova",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A Front End Framework from Rokutsan using Jade, Stylus, and Uhmm Special Sauce",
   "main": "gulp.js",
   "dependencies": {
