@@ -25,7 +25,7 @@
   ],
   "devDependencies": {
     "html5shiv": "latest",
-    "fontawesome": "^4.2.0"
+    "bootstrap": "~3.3.0"
   },
   "dependencies": {}
 }

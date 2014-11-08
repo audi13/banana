@@ -1,13 +1,14 @@
 var gulp        = require('gulp'),
     jade        = require('gulp-jade'),
-    stylus      = require('gulp-stylus'),
+    less        = require('gulp-less'),
     rename      = require("gulp-rename"),
     minify      = require('gulp-minify-css'),
     uglify      = require('gulp-uglify'),
     concat      = require('gulp-concat'),
     browserSync = require('browser-sync');
 
-gulp.task('default', ['jade', 'bootstrap','browser-sync'], function() {
+//- Default task
+gulp.task('default', ['jade', 'assets', 'browser-sync'], function () {
     gulp.watch([ 'lib/*.jade',
                  'lib/layout/layout.jade',
                  'lib/layout/body/*.jade',
@@ -16,33 +17,39 @@ gulp.task('default', ['jade', 'bootstrap','browser-sync'], function() {
                ], ['jade']);
 });
 
-//- editing bootstrap
-gulp.task('bootstrap', ['bootstrapcss', 'bootstrapjs', 'movefonts']);
+//- Editing bootstrap
+gulp.task('assets', ['css', 'bootstrapjs', 'jquery', 'movefonts']);
 
-//- move all the bootstrap fonts
+//- Move all the bootstrap fonts
 gulp.task('movefonts', function () {
-    gulp.src('bower_components/bootstrap-stylus/fonts/*')
+    gulp.src('bower_components/bootstrap/fonts/*')
         .pipe(gulp.dest('dist/assets/fonts'))
 });
 
-//- Get bootstrap.styl file and render
-gulp.task('bootstrapcss', function () {
-    gulp.src('bower_components/bootstrap-stylus/stylus/bootstrap.styl')
-        .pipe(stylus())
+//- Move jQuery dist files
+gulp.task('jquery', function () {
+    gulp.src('bower_components/jquery/dist/jquery.min.*')
+        .pipe(gulp.dest('dist/assets/js'))
+});
+
+//- Get custom LESS file and render
+gulp.task('css', function () {
+    gulp.src('lib/assets/less/layout.less')
+        .pipe(less())
         .pipe(minify())
-        .pipe(rename("bootstrap.min.css"))
+        .pipe(rename("layout.min.css"))
         .pipe(gulp.dest('dist/assets/css'));
 });
 
 //- Concat all Bootstrap js  file and render
 gulp.task('bootstrapjs', function () {
-    gulp.src('bower_components/bootstrap-stylus/js/*.js')
+    gulp.src('bower_components/bootstrap/js/*.js')
         .pipe(concat('bootstrap.min.js'))
         .pipe(uglify())
         .pipe(gulp.dest('dist/assets/js'));
 });
 
-//- compile all the jade function
+//- Compile all the Jade files
 gulp.task('jade', function () {
     var YOUR_LOCALS = {};
 
@@ -54,7 +61,7 @@ gulp.task('jade', function () {
     .pipe(browserSync.reload({stream:true}));
 });
 
-//- run the browsersync
+//- Run the browsersync
 gulp.task('browser-sync', function() {
     browserSync({
         server: {
