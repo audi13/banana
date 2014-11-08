@@ -1,20 +1,31 @@
-var gulp = require('gulp'),
-    jade = require('gulp-jade'),
-    stylus = require('gulp-stylus'),
-    rename = require("gulp-rename"),
-    minify = require('gulp-minify-css'),
-    uglify = require('gulp-uglify'),
-    concat = require('gulp-concat');
+var gulp        = require('gulp'),
+    jade        = require('gulp-jade'),
+    stylus      = require('gulp-stylus'),
+    rename      = require("gulp-rename"),
+    minify      = require('gulp-minify-css'),
+    uglify      = require('gulp-uglify'),
+    concat      = require('gulp-concat'),
+    browserSync = require('browser-sync');
 
-gulp.task('default', ['jade', 'bootstrap', 'move']);
-gulp.task('bootstrap', ['bootstrapcss', 'bootstrapjs']);
+gulp.task('default', ['jade', 'bootstrap','browser-sync'], function() {
+    gulp.watch([ 'lib/*.jade',
+                 'lib/layout/layout.jade',
+                 'lib/layout/body/*.jade',
+                 'lib/layout/body/blocks/*.jade',
+                 'lib/layout/head/*.jade'
+               ], ['jade']);
+});
 
-gulp.task('move', function () {
+//- editing bootstrap
+gulp.task('bootstrap', ['bootstrapcss', 'bootstrapjs', 'movefonts']);
+
+//- move all the bootstrap fonts
+gulp.task('movefonts', function () {
     gulp.src('bower_components/bootstrap-stylus/fonts/*')
         .pipe(gulp.dest('dist/assets/fonts'))
 });
 
-//- Get one .styl file and render
+//- Get bootstrap.styl file and render
 gulp.task('bootstrapcss', function () {
     gulp.src('bower_components/bootstrap-stylus/stylus/bootstrap.styl')
         .pipe(stylus())
@@ -23,6 +34,7 @@ gulp.task('bootstrapcss', function () {
         .pipe(gulp.dest('dist/assets/css'));
 });
 
+//- Concat all Bootstrap js  file and render
 gulp.task('bootstrapjs', function () {
     gulp.src('bower_components/bootstrap-stylus/js/*.js')
         .pipe(concat('bootstrap.min.js'))
@@ -38,5 +50,15 @@ gulp.task('jade', function () {
     .pipe(jade({
       locals: YOUR_LOCALS
     }))
-    .pipe(gulp.dest('dist/'));
+    .pipe(gulp.dest('dist/'))
+    .pipe(browserSync.reload({stream:true}));
+});
+
+//- run the browsersync
+gulp.task('browser-sync', function() {
+    browserSync({
+        server: {
+            baseDir: "dist"
+        }
+    });
 });

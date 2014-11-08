@@ -26,9 +26,7 @@
   "devDependencies": {
     "bootstrap-stylus": "latest",
     "html5shiv": "latest",
-    "components-font-awesome": "~4.2.0"
+    "font-awesome-stylus": "~1.2.1"
   },
-  "dependencies": {
-
-  }
+  "dependencies": {}
 }
