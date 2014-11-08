@@ -24,9 +24,8 @@
     "tests"
   ],
   "devDependencies": {
-    "bootstrap-stylus": "latest",
     "html5shiv": "latest",
-    "font-awesome-stylus": "~1.2.1"
+    "fontawesome": "^4.2.0"
   },
   "dependencies": {}
 }
